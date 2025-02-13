@@ -1,7 +1,7 @@
-#include <iostream>
+#include <iostream>	// For cerr, endl
 
-#include "util/handle_arguments.hpp"
-#include "util/handle_interaction.hpp"
+#include "util/handle_arguments.hpp"	// For handle_arguments
+#include "util/handle_interaction.hpp"	// For handle_interaction
 
 using namespace std;
 

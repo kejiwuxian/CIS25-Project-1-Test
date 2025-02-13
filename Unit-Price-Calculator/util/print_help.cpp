@@ -1,6 +1,9 @@
 #include <iostream>
 #include <iomanip>
 
+#include "supported_currencies.hpp"
+#include "supported_units.hpp"
+
 using namespace std;
 
 namespace user_interaction
@@ -22,9 +25,8 @@ namespace user_interaction
 		cout << left << setw(40) << "    unitprice 4.99USD/1LB EUR/KG" << "How much euros per kilogram of a product that costs $4.99 per pound is worth" << endl;
 		cout << left << setw(40) << "    unitprice 1usd/2.5oz eur/g" << "How much euros per gram of a product that costs $1 per 2.5 ounces is worth" << endl;
 		cout << endl;
-		cout << "SUPPORTED_UNITS:" << endl;
-		cout << endl;
-		cout << "SUPPORTED_CURRENCIES:" << endl;
-		cout << endl;
+		// An example use of namespace
+		currencies::print_all();
+		units::print_all();
 	}
 }
