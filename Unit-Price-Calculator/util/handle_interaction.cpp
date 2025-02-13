@@ -4,9 +4,10 @@
 #include "print_help.hpp"			// For print_help
 #include "supported_currencies.hpp"	// For currencies
 #include "supported_units.hpp"		// For units
-#include "get_exchange_rate.hpp"	// For get_exchange_rate
 #include "process_original.hpp"		// For process_original
 #include "process_target.hpp"		// For process_target
+#include "convert_currency.hpp"		// For convert_currency
+#include "convert_unit.hpp"			// For convert_unit
 
 using namespace std;
 
@@ -17,26 +18,40 @@ namespace user_interaction
 	void handle_interaction()
 	{
 		print_help();
-		cout << currencies::get_exchange_rate(currencies::currencies::usd, currencies::currencies::cny) << endl;
 		cout << "Please enter [PRICE][ORIGINAL_CURRENCY]/[WEIGHT][ORIGINAL_UNIT]: ";
 		string input;
 		getline(cin, input);
 		double price, weight;
-		currencies::currencies currency;
-		units::units unit;
-		if (process_original(input, price, currency, weight, unit))
+		currencies::currencies currency_from;
+		units::units unit_from;
+		if (process_original(input, price, currency_from, weight, unit_from))
 		{
 			cout << price << endl;
-			cout << currency << endl;
+			cout << currency_from << endl;
 			cout << weight << endl;
-			cout << unit << endl;
+			cout << unit_from << endl;
+		}
+		else
+		{
+			return;
 		}
 		cout << "Please enter [TARGET_CURRENCY]/[TARGET_UNIT]: ";
 		getline(cin, input);
-		if (process_target(input, currency, unit))
+		currencies::currencies currency_to;
+		units::units unit_to;
+		if (process_target(input, currency_to, unit_to))
 		{
-			cout << currency << endl;
-			cout << unit << endl;
+			cout << currency_to << endl;
+			cout << unit_to << endl;
 		}
+		else
+		{
+			return;
+		}
+
+		cout << currencies::convert_currency(price, currency_from, currency_to) << currencies::names[currency_to] << '/'
+			<< units::convert_unit(weight, unit_from, unit_to) << units::names[unit_to] << endl;
+		cout << currencies::convert_currency(price, currency_from, currency_to) / units::convert_unit(weight, unit_from, unit_to)
+			<< currencies::names[currency_to] << '/' << units::names[unit_to] << endl;
 	}
 }
