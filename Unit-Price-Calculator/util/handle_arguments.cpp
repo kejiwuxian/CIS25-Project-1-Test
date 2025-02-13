@@ -23,12 +23,12 @@ namespace user_interaction
 		// An example use of switch statement
 		switch (argc)
 		{
-		case 3:
+		case 3:	// Expected number of arguments
 			double price, weight;
 			currencies::currencies currency_from, currency_to;
 			units::units unit_from, unit_to;
 
-			// An example use of nested conditions
+			// An example use of nested conditions and overloading functions
 			if (process_input(string(argv[1]), price, currency_from, weight, unit_from))
 			{
 				if (process_input(string(argv[2]), currency_to, unit_to))
@@ -38,7 +38,7 @@ namespace user_interaction
 				}
 			}
 			break;
-		default:
+		default:// Unexpected number of arguments
 			print_help();
 			break;
 		}

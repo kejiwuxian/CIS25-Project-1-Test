@@ -18,16 +18,16 @@ namespace user_interaction
 	{
 		// Process currency
 		util::strip_and_to_lower(input);
-		size_t i = input.find('/');
-		if (i == string::npos)
+		size_t i = input.find('/');							// Find the end of the currency
+		if (i == string::npos)								// When the end of the currency is not found
 		{
 			cout << "Please type '/' between currency and weight" << endl << endl;
 			return false;
 		}
-		string str = input.substr(0, i);
+		string str = input.substr(0, i);					// The string for the currency
 		util::strip_and_to_lower(str);
 		bool no_match = true;
-		for (int j = 0;j < size(currencies::names);j++)
+		for (int j = 0;j < size(currencies::names);j++)		// Linear Search
 		{
 			if (str == currencies::names[j])
 			{
@@ -40,19 +40,19 @@ namespace user_interaction
 		{
 			cout << "Currency \"" + str + "\" is not supported" << endl;
 			cout << "Supported currencies: ";
-			for (auto name : currencies::names)
+			for (auto name : currencies::names)				// Iterate array with for each loop
 			{
 				cout << name << ' ';
 			}
 			cout << endl << endl;
 			return false;
 		}
-		input = input.substr(i + 1);
+		input = input.substr(i + 1);						// Skip the currency
 
 		// Process unit
 		util::strip_and_to_lower(input);
 		no_match = true;
-		for (int j = 0;j < size(units::names);j++)
+		for (int j = 0;j < size(units::names);j++)			// Linear Search
 		{
 			if (input == units::names[j])
 			{
@@ -65,7 +65,7 @@ namespace user_interaction
 		{
 			cout << "Unit \"" + input + "\" is not supported" << endl;
 			cout << "Supported units: ";
-			for (auto name : units::names)
+			for (auto name : units::names)					// Iterate array with for each loop
 			{
 				cout << name << ' ';
 			}

@@ -10,13 +10,13 @@ namespace util
 	void strip_and_to_lower(string& str)
 	{
 		// Strip Left
-		while (!str.empty() && string(" \r\n").find_first_of(str[0]) != string::npos)
+		while (!str.empty() && string(" \r\n").find(str[0]) != string::npos)
 		{
 			str.erase(0, 1);
 		}
 
 		// Strip Right
-		while (!str.empty() && string(" \r\n").find_first_of(str[str.length() - 1]) != string::npos)
+		while (!str.empty() && string(" \r\n").find(str[str.length() - 1]) != string::npos)
 		{
 			str.pop_back();
 		}

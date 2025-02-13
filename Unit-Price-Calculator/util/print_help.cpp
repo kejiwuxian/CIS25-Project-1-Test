@@ -28,7 +28,7 @@ namespace user_interaction
 		cout << left << setw(40) << "    unitprice 1usd/2.5oz eur/g" << "How much euros per gram of a product that costs $1 per 2.5 ounces is worth" << endl;
 		cout << left << setw(40) << "    unitprice uSd/JiN eUr/kG" << "How much euros per kilogram of a product that costs $1 per pound is worth" << endl;
 		cout << endl;
-		// An example use of namespace
+		// An example use of namespaces
 		currencies::print_all();
 		units::print_all();
 	}

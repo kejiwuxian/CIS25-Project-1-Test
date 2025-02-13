@@ -12,18 +12,6 @@ int main(int argc, char** argv)
 	{
 		// Check if the user has entered any command line argument, an example use of conditional operator and const_cast
 		argc > 1 ? user_interaction::handle_arguments(argc, const_cast<const char**>(argv)) : user_interaction::handle_interactions();
-
-		//// Check if the user has entered any command line argument
-		//if (argc > 1)
-		//{
-		//	// Handle user inputted command line arguments, an example use of const_cast
-		//	user_interaction::handle_arguments(argc, const_cast<const char**>(argv));
-		//}
-		//else
-		//{
-		//	// Handle user interactions
-		//	user_interaction::handle_interactions();
-		//}
 	}
 	catch (exception& e)
 	{
