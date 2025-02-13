@@ -1,13 +1,15 @@
-#include <iostream>
-#include <iomanip>
+#include <iostream>	// For cout, endl
+#include <iomanip>	// For left, setw
 
-#include "supported_currencies.hpp"
-#include "supported_units.hpp"
+#include "supported_currencies.hpp"	// For currencies::print_all
+#include "supported_units.hpp"		// For units::print_all
 
 using namespace std;
 
+// Namespace for everything related to user interaction
 namespace user_interaction
 {
+	// Print the help message
 	void print_help()
 	{
 		cout << "Calculate the unit price in different units and currencies." << endl << endl;

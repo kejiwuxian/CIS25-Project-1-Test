@@ -6,8 +6,10 @@
 
 using namespace std;
 
+// Namespace for everything related to the units
 namespace units
 {
+	// Print all supported units, an example use of namespace
 	void print_all()
 	{
 		cout << "SUPPORTED_UNITS:" << endl;
