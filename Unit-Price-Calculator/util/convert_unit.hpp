@@ -1,6 +1,6 @@
 #pragma once
 
-#include "supported_units.hpp"	// For units
+#include "units_enum.hpp"	// For units::units
 
 // Namespace for everything related to the units
 namespace units

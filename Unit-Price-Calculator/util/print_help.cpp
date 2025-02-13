@@ -1,8 +1,8 @@
 #include <iostream>	// For cout, endl
 #include <iomanip>	// For left, setw
 
-#include "supported_currencies.hpp"	// For currencies::print_all
-#include "supported_units.hpp"		// For units::print_all
+#include "print_supported_currencies.hpp"	// For currencies::print_all
+#include "print_supported_units.hpp"		// For units::print_all
 
 using namespace std;
 

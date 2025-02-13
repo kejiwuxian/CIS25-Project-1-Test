@@ -1,4 +1,5 @@
-#include "supported_units.hpp"	// For units, conversion_rates
+#include "units_enum.hpp"				// For units::units
+#include "units_conversion_rates.hpp"	// For units::conversion_rates
 
 // Namespace for everything related to the units
 namespace units

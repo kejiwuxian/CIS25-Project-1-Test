@@ -3,13 +3,15 @@
 #include <string>	// For string
 #include <cstdlib>	// For system
 
-#include "print_help.hpp"			// For print_help
-#include "supported_currencies.hpp"	// For currencies, currencies::names
-#include "supported_units.hpp"		// For units, units::names
-#include "process_original.hpp"		// For process_original
-#include "process_target.hpp"		// For process_target
-#include "convert_currency.hpp"		// For convert_currency
-#include "convert_unit.hpp"			// For convert_unit
+#include "print_help.hpp"				// For user_interaction::print_help
+#include "currencies_enum.hpp"			// For currencies::currencies
+#include "currencies_names.hpp"			// For currencies::names
+#include "units_enum.hpp"				// For units::units
+#include "units_names.hpp"				// For units::names
+#include "process_input_original.hpp"	// For user_interaction::process_input
+#include "process_input_target.hpp"		// For user_interaction::process_input
+#include "convert_currency.hpp"			// For currencies::convert_currency
+#include "convert_unit.hpp"				// For units::convert_unit
 
 using namespace std;
 

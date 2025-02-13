@@ -2,17 +2,18 @@
 #include <iomanip>	// For left, setw
 #include <array>	// For size
 
-#include "supported_currencies.hpp"	// For names, descriptions
+#include "units_names.hpp"			// For units::names
+#include "units_descriptions.hpp"	// For units::descriptions
 
 using namespace std;
 
-// Namespace for everything related to the currencies
-namespace currencies
+// Namespace for everything related to the units
+namespace units
 {
-	// Print all supported currencies, an example use of namespace
+	// Print all supported units, an example use of namespace
 	void print_all()
 	{
-		cout << "supported_currencies:" << endl;
+		cout << "supported_units:" << endl;
 		for (int i = 0;i < size(names);i++)
 		{
 			cout << left << setw(40) << "    " + names[i] << descriptions[i] << endl;

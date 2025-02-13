@@ -2,8 +2,8 @@
 
 #include <string>	// For string
 
-#include "supported_currencies.hpp"	// For currencies
-#include "supported_units.hpp"		// For units
+#include "currencies_enum.hpp"	// For currencies::currencies
+#include "units_enum.hpp"		// For units::units
 
 // Namespace for everything related to user interaction
 namespace user_interaction

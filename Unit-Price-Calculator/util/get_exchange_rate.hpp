@@ -1,6 +1,6 @@
 #pragma once
 
-#include "supported_currencies.hpp"	// For currencies
+#include "currencies_enum.hpp"	// For currencies::currencies
 
 // Namespace for everything related to the currencies
 namespace currencies
