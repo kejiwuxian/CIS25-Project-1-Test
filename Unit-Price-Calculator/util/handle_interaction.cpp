@@ -6,6 +6,7 @@
 #include "supported_units.hpp"		// For units
 #include "get_exchange_rate.hpp"	// For get_exchange_rate
 #include "process_original.hpp"		// For process_original
+#include "process_target.hpp"		// For process_target
 
 using namespace std;
 
@@ -28,6 +29,13 @@ namespace user_interaction
 			cout << price << endl;
 			cout << currency << endl;
 			cout << weight << endl;
+			cout << unit << endl;
+		}
+		cout << "Please enter [TARGET_CURRENCY]/[TARGET_UNIT]: ";
+		getline(cin, input);
+		if (process_target(input, currency, unit))
+		{
+			cout << currency << endl;
 			cout << unit << endl;
 		}
 	}

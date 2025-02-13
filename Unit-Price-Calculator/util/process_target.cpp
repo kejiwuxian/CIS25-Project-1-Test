@@ -11,41 +11,18 @@ using namespace std;
 // Namespace for everything related to user interaction
 namespace user_interaction
 {
-	// Try to process user inputted original price, currency, weight, and unit
-	bool process_original(string input, double& price, currencies::currencies& currency, double& weight, units::units& unit)
+	// Try to process user inputted target currency and unit
+	bool process_target(string input, currencies::currencies& currency, units::units& unit)
 	{
-		// Process price
-		util::strip_and_to_lower(input);
-		size_t i = input.find_first_not_of("0123456789.");
-		if (i == string::npos)
-		{
-			cout << "Error: Please enter a valid currency after the price" << endl << endl;
-			return false;
-		}
-		string str = input.substr(0, i);
-		try
-		{
-			price = stod(str);
-			if (price <= 0)
-			{
-				throw;
-			}
-		}
-		catch (exception)
-		{
-			cout << "Error: Please enter a valid positive number as price" << endl << endl;
-			return false;
-		}
-		input = input.substr(i);
-
 		// Process currency
-		i = input.find('/');
+		util::strip_and_to_lower(input);
+		size_t i = input.find('/');
 		if (i == string::npos)
 		{
 			cout << "Error: Please type '/' between currency and weight" << endl << endl;
 			return false;
 		}
-		str = input.substr(0, i);
+		string str = input.substr(0, i);
 		util::strip_and_to_lower(str);
 		bool ok = false;
 		for (int j = 0;j < size(currencies::names);j++)
@@ -63,30 +40,6 @@ namespace user_interaction
 			return false;
 		}
 		input = input.substr(i + 1);
-
-		// Process weight
-		util::strip_and_to_lower(input);
-		i = input.find_first_not_of("0123456789.");
-		if (i == string::npos)
-		{
-			cout << "Error: Please enter a valid unit after the weight" << endl << endl;
-			return false;
-		}
-		str = input.substr(0, i);
-		try
-		{
-			weight = stod(str);
-			if (weight <= 0)
-			{
-				throw;
-			}
-		}
-		catch (exception)
-		{
-			cout << "Error: Please enter a valid positive number as weight" << endl << endl;
-			return false;
-		}
-		input = input.substr(i);
 
 		// Process unit
 		util::strip_and_to_lower(input);

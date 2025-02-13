@@ -8,6 +8,6 @@
 // Namespace for everything related to user interaction
 namespace user_interaction
 {
-	// Try to process user inputted original price, currency, weight, and unit
-	bool process_original(std::string input, double& price, currencies::currencies& currency, double& weight, units::units& unit);
+	// Try to process user inputted target currency and unit
+	bool process_target(std::string input, currencies::currencies& currency, units::units& unit);
 }
