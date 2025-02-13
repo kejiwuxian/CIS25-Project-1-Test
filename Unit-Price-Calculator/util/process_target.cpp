@@ -12,50 +12,62 @@ using namespace std;
 namespace user_interaction
 {
 	// Try to process user inputted target currency and unit
-	bool process_target(string input, currencies::currencies& currency, units::units& unit)
+	bool process_input(string input, currencies::currencies& currency, units::units& unit)
 	{
 		// Process currency
 		util::strip_and_to_lower(input);
 		size_t i = input.find('/');
 		if (i == string::npos)
 		{
-			cout << "Error: Please type '/' between currency and weight" << endl << endl;
+			cout << "Please type '/' between currency and weight" << endl << endl;
 			return false;
 		}
 		string str = input.substr(0, i);
 		util::strip_and_to_lower(str);
-		bool ok = false;
+		bool no_match = true;
 		for (int j = 0;j < size(currencies::names);j++)
 		{
 			if (str == currencies::names[j])
 			{
 				currency = static_cast<currencies::currencies>(j);
-				ok = true;
+				no_match = false;
 				break;
 			}
 		}
-		if (!ok)
+		if (no_match)
 		{
-			cout << "Error: Currency \"" + str + "\" is not supported" << endl << endl;
+			cout << "Currency \"" + str + "\" is not supported" << endl;
+			cout << "Supported currencies: ";
+			for (auto name : currencies::names)
+			{
+				cout << name << ' ';
+			}
+			cout << endl << endl;
 			return false;
 		}
 		input = input.substr(i + 1);
 
 		// Process unit
 		util::strip_and_to_lower(input);
-		ok = false;
+		no_match = true;
 		for (int j = 0;j < size(units::names);j++)
 		{
 			if (input == units::names[j])
 			{
 				unit = static_cast<units::units>(j);
-				ok = true;
+				no_match = false;
 				break;
 			}
 		}
-		if (!ok)
+		if (no_match)
 		{
-			cout << "Error: Unit \"" + input + "\" is not supported" << endl << endl;
+			cout << "Unit \"" + input + "\" is not supported" << endl;
+			cout << "Supported units: ";
+			for (auto name : units::names)
+			{
+				cout << name << ' ';
+			}
+			cout << endl << endl;
 			return false;
 		}
 

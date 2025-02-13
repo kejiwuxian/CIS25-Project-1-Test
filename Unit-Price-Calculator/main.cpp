@@ -1,7 +1,7 @@
 #include <iostream>	// For cerr, endl
 
 #include "util/handle_arguments.hpp"	// For handle_arguments
-#include "util/handle_interaction.hpp"	// For handle_interaction
+#include "util/handle_interactions.hpp"	// For handle_interactions
 
 using namespace std;
 
@@ -10,18 +10,24 @@ int main(int argc, char** argv)
 	// An example of exception handling
 	try
 	{
-		if (argc > 1)
-		{
-			// An example use of const_cast
-			user_interaction::handle_arguments(argc, const_cast<const char**>(argv));
-		}
-		else
-		{
-			user_interaction::handle_interaction();
-		}
+		// Check if the user has entered any command line argument, an example use of conditional operator and const_cast
+		argc > 1 ? user_interaction::handle_arguments(argc, const_cast<const char**>(argv)) : user_interaction::handle_interactions();
+
+		//// Check if the user has entered any command line argument
+		//if (argc > 1)
+		//{
+		//	// Handle user inputted command line arguments, an example use of const_cast
+		//	user_interaction::handle_arguments(argc, const_cast<const char**>(argv));
+		//}
+		//else
+		//{
+		//	// Handle user interactions
+		//	user_interaction::handle_interactions();
+		//}
 	}
 	catch (exception& e)
 	{
+		// Output the error message
 		cerr << e.what() << endl;
 		return -1;
 	}

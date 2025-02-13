@@ -16,44 +16,49 @@ using namespace std;
 // Namespace for everything related to user interaction
 namespace user_interaction
 {
-	// Handle user interaction
-	void handle_interaction()
+	// Handle user interactions
+	void handle_interactions()
 	{
 		string input;
 		double price, weight;
 		currencies::currencies currency_from, currency_to;
 		units::units unit_from, unit_to;
+
 		print_help();
 		cout << "Press enter to continue...";
 		getline(cin, input);
-#ifdef _WIN32 // Windows MSVC
+
+		// Clear console window, an example use of advanced features
+		#ifdef _WIN32 // Windows MSVC
 		system("cls");
-#else // Linux, MacOS
+		#else // Linux, MacOS
 		system("clear");
-#endif
-		while (true)
+		#endif
+
+		// An example use of do-while loop
+		do
 		{
 			cout << "Press enter without input to exit." << endl;
 			cout << "Please enter [PRICE]ORIGINAL_CURRENCY/[WEIGHT]ORIGINAL_UNIT: ";
 			getline(cin, input);
+
 			if (input.empty())
 			{
 				return;
 			}
-			if (!process_original(input, price, currency_from, weight, unit_from))
-			{
-				continue;
-			}
 
-			cout << "Please enter TARGET_CURRENCY/TARGET_UNIT: ";
-			getline(cin, input);
-			if (!process_target(input, currency_to, unit_to))
+			// An example use of nested conditions
+			if (process_input(input, price, currency_from, weight, unit_from))
 			{
-				continue;
-			}
+				cout << "Please enter TARGET_CURRENCY/TARGET_UNIT: ";
+				getline(cin, input);
 
-			cout << left << setw(16) << setprecision(14) << currencies::convert_currency(price, currency_from, currency_to) / units::convert_unit(weight, unit_from, unit_to)
-				<< currencies::names[static_cast<int>(currency_to)] << " per " << units::names[static_cast<int>(unit_to)] << endl << endl;
-		}
+				if (process_input(input, currency_to, unit_to))
+				{
+					cout << left << setw(16) << setprecision(14) << currencies::convert_currency(price, currency_from, currency_to) / units::convert_unit(weight, unit_from, unit_to)
+						<< currencies::names[static_cast<int>(currency_to)] << " per " << units::names[static_cast<int>(unit_to)] << endl << endl;
+				}
+			}
+		} while (true);
 	}
 }
