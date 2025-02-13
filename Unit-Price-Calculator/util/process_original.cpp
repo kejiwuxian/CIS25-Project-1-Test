@@ -23,19 +23,27 @@ namespace user_interaction
 			return false;
 		}
 		string str = input.substr(0, i);
-		try
+		if (str.empty())
 		{
-			price = stod(str);
-			if (price <= 0)
+			price = 1;
+		}
+		else
+		{
+			try
 			{
-				throw;
+				price = stod(str);
+				if (price <= 0)
+				{
+					throw;
+				}
+			}
+			catch (exception)
+			{
+				cout << "Error: Please enter a valid positive number as price" << endl << endl;
+				return false;
 			}
 		}
-		catch (exception)
-		{
-			cout << "Error: Please enter a valid positive number as price" << endl << endl;
-			return false;
-		}
+
 		input = input.substr(i);
 
 		// Process currency
@@ -73,18 +81,25 @@ namespace user_interaction
 			return false;
 		}
 		str = input.substr(0, i);
-		try
+		if (str.empty())
 		{
-			weight = stod(str);
-			if (weight <= 0)
-			{
-				throw;
-			}
+			weight = 1;
 		}
-		catch (exception)
+		else
 		{
-			cout << "Error: Please enter a valid positive number as weight" << endl << endl;
-			return false;
+			try
+			{
+				weight = stod(str);
+				if (weight <= 0)
+				{
+					throw;
+				}
+			}
+			catch (exception)
+			{
+				cout << "Error: Please enter a valid positive number as weight" << endl << endl;
+				return false;
+			}
 		}
 		input = input.substr(i);
 

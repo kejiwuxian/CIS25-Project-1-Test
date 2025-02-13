@@ -12,7 +12,7 @@ namespace units
 	// Print all supported units, an example use of namespace
 	void print_all()
 	{
-		cout << "SUPPORTED_UNITS:" << endl;
+		cout << "supported_units:" << endl;
 		for (int i = 0;i < size(names);i++)
 		{
 			cout << left << setw(40) << "    " + names[i] << descriptions[i] << endl;
