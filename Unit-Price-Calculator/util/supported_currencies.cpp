@@ -1,5 +1,6 @@
 #include <iostream>	// For cout, endl
 #include <iomanip>	// For left, setw
+#include <array>	// For size
 
 #include "supported_currencies.hpp"	// For names, descriptions
 
