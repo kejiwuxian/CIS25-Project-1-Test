@@ -18,7 +18,7 @@ namespace user_interaction
 	{
 		// Process price
 		util::strip_and_to_lower(input);
-		size_t i = input.find_first_not_of("0123456789.");	// Find the end of the price
+		size_t i = input.find_first_not_of("0123456789.-");	// Find the end of the price
 		if (i == string::npos)								// When the end of the price is not found
 		{
 			cout << "Please enter a valid currency after the price" << endl << endl;
@@ -36,7 +36,7 @@ namespace user_interaction
 				price = stod(str);							// Convert the string for the price to double
 				if (price <= 0)								// When the price entered is not a positive number
 				{
-					throw;
+					throw exception();
 				}
 			}
 			catch (exception)
@@ -45,7 +45,6 @@ namespace user_interaction
 				return false;
 			}
 		}
-
 		input = input.substr(i);							// Skip the price
 
 		// Process currency
@@ -82,7 +81,7 @@ namespace user_interaction
 
 		// Process weight
 		util::strip_and_to_lower(input);
-		i = input.find_first_not_of("0123456789.");			// Find the end of the weight
+		i = input.find_first_not_of("0123456789.-");			// Find the end of the weight
 		if (i == string::npos)								// When the end of the weight is not found
 		{
 			cout << "Please enter a valid unit after the weight" << endl << endl;
@@ -100,7 +99,7 @@ namespace user_interaction
 				weight = stod(str);							// Convert the string for the weight to double
 				if (weight <= 0)							// When the weight entered is not a positive number
 				{
-					throw;
+					throw exception();
 				}
 			}
 			catch (exception)

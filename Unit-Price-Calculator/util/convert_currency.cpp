@@ -5,8 +5,8 @@
 namespace currencies
 {
 	// Convert one currency to another, an example use of default argument
-	double convert_currency(const double weight, const currencies from, const currencies to)
+	double convert_currency(const double value, const currencies from, const currencies to)
 	{
-		return weight * get_exchange_rate(from, to);
+		return value * get_exchange_rate(from, to);
 	}
 }

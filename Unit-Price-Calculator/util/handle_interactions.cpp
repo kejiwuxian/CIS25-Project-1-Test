@@ -23,8 +23,8 @@ namespace user_interaction
 	{
 		string input;
 		double price, weight;
-		currencies::currencies currency_from, currency_to;
-		units::units unit_from, unit_to;
+		currencies::currencies original_currency, target_currency;
+		units::units original_unit, target_unit;
 
 		print_help();
 		cout << "Press enter to continue...";
@@ -50,16 +50,16 @@ namespace user_interaction
 			}
 
 			// An example use of nested conditions and overloading functions
-			if (process_input(input, price, currency_from, weight, unit_from))
+			if (process_input(input, price, original_currency, weight, original_unit))
 			{
-				cout << "Please enter TARGET_CURRENCY/TARGET_UNIT: ";
-				getline(cin, input);
-
-				if (process_input(input, currency_to, unit_to))
+				do
 				{
-					cout << left << setw(16) << setprecision(14) << currencies::convert_currency(price, currency_from, currency_to) / units::convert_unit(weight, unit_from, unit_to)
-						<< currencies::names[static_cast<int>(currency_to)] << " per " << units::names[static_cast<int>(unit_to)] << endl << endl;
-				}
+					cout << "Please enter TARGET_CURRENCY/TARGET_UNIT: ";
+					getline(cin, input);
+				} while (!process_input(input, target_currency, target_unit));
+
+				cout << left << setw(16) << setprecision(14) << currencies::convert_currency(price, original_currency, target_currency) / units::convert_unit(weight, original_unit, target_unit)
+					<< currencies::names[static_cast<int>(target_currency)] << " per " << units::names[static_cast<int>(target_unit)] << endl << endl;
 			}
 		} while (true);
 	}
