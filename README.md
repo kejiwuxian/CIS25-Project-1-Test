@@ -7,6 +7,7 @@ A program that calculates a product's unit price in another weight unit and curr
 It prompts users to enter the product's net weight, weight unit, price, currency, target weight unit, and target currency.  
 It then fetches the current currency conversion rate from an API[^1] and calculates the unit price in the target weight unit and target currency.
 
+## [Project Presentation](https://youtu.be/TYXPYbKedRk)
 ## [Code walk through](https://youtu.be/yvOAlP9YSDo)
 
 ## How to compile
