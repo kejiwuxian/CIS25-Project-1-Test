@@ -11,23 +11,22 @@ It then fetches the current currency conversion rate from an API[^1] and calcula
 ## [Code walk through](https://youtu.be/yvOAlP9YSDo)
 
 ## How to compile
-### Linux
 ```
-cd Unit-Price-Calculator
-mkdir build
-g++ -std=c++20 -o build/main *.cpp util/*.cpp
+cd build
+cmake ..
+cmake --build .
 ```
-### Windows
+
+## How to run
 ```
-cd Unit-Price-Calculator
-mkdir build
-cl -EHsc -std:c++20 -W4 -Fe:build/main.exe *.cpp util/*.cpp
+cd build/Debug
+main_exec
 ```
-### MacOS
+
+## How to run Google Test
 ```
-cd Unit-Price-Calculator
-mkdir build
-clang++ -std=c++20 -o build/main *.cpp util/*.cpp
+cd build/Debug
+test_exec
 ```
 
 [^1]: Free Currency Exchange Rates API [exchange-api](https://github.com/fawazahmed0/exchange-api).
