@@ -2,11 +2,11 @@
 #include <string>	// For string
 #include <array>	// For size
 
-#include "currencies_enum.hpp"		// For currencies::currencies
-#include "currencies_names.hpp"		// For currencies::names
-#include "units_enum.hpp"			// For units::units
-#include "units_names.hpp"			// For units::names
-#include "strip_and_to_lower.hpp"	// For strip_and_to_lower
+#include "util/currencies_enum.hpp"		// For currencies::currencies
+#include "util/currencies_names.hpp"		// For currencies::names
+#include "util/units_enum.hpp"			// For units::units
+#include "util/units_names.hpp"			// For units::names
+#include "util/strip_and_to_lower.hpp"	// For strip_and_to_lower
 
 using namespace std;
 

@@ -1,5 +1,5 @@
-#include "currencies_enum.hpp"	// For currencies::currencies
-#include "get_exchange_rate.hpp"// For get_exchange_rate
+#include "util/currencies_enum.hpp"	// For currencies::currencies
+#include "util/get_exchange_rate.hpp"// For get_exchange_rate
 
 // Namespace for everything related to the currencies
 namespace currencies

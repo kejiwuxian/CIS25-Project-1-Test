@@ -2,8 +2,8 @@
 #include <iomanip>	// For left, setw
 #include <array>	// For size
 
-#include "currencies_names.hpp"			// For currencies::names
-#include "currencies_descriptions.hpp"	// For currencies::descriptions
+#include "util/currencies_names.hpp"			// For currencies::names
+#include "util/currencies_descriptions.hpp"	// For currencies::descriptions
 
 using namespace std;
 

@@ -2,15 +2,15 @@
 #include <iomanip>	// For left, setw
 #include <string>	// For string
 
-#include "print_help.hpp"				// For print_help
-#include "currencies_enum.hpp"			// For currencies::currencies
-#include "currencies_names.hpp"			// For currencies::names
-#include "units_enum.hpp"				// For units::units
-#include "units_names.hpp"				// For units::names
-#include "process_input_original.hpp"	// For user_interaction::process_input
-#include "process_input_target.hpp"		// For user_interaction::process_input
-#include "convert_currency.hpp"			// For currencies::convert_currency
-#include "convert_unit.hpp"				// For units::convert_unit
+#include "util/print_help.hpp"				// For print_help
+#include "util/currencies_enum.hpp"			// For currencies::currencies
+#include "util/currencies_names.hpp"			// For currencies::names
+#include "util/units_enum.hpp"				// For units::units
+#include "util/units_names.hpp"				// For units::names
+#include "util/process_input_original.hpp"	// For user_interaction::process_input
+#include "util/process_input_target.hpp"		// For user_interaction::process_input
+#include "util/convert_currency.hpp"			// For currencies::convert_currency
+#include "util/convert_unit.hpp"				// For units::convert_unit
 
 using namespace std;
 

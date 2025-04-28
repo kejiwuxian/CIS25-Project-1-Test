@@ -8,9 +8,9 @@ add_subdirectory (extern/googletest)
 
 include_directories(include ${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-file(GLOB SOURCES "Unit-Price-Calculator/util/*.cpp")
-add_executable(main_exec Unit-Price-Calculator/main.cpp ${SOURCES})
-add_executable(test_exec test/test_main.cpp ${SOURCES})
+file(GLOB SOURCES "src/util/*.cpp")
+add_executable(main_exec "src/main.cpp" ${SOURCES})
+add_executable(test_exec "test/test_main.cpp" ${SOURCES})
 
 target_link_libraries(test_exec gtest gtest_main)
 

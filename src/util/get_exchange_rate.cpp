@@ -9,8 +9,8 @@
 #include <stdio.h>	// For popen, pclose
 #endif
 
-#include "currencies_enum.hpp"	// For currencies::currencies
-#include "currencies_names.hpp"	// For currencies::names
+#include "util/currencies_enum.hpp"	// For currencies::currencies
+#include "util/currencies_names.hpp"	// For currencies::names
 
 using namespace std;
 
