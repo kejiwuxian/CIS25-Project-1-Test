@@ -3,10 +3,15 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+build/
+out/
+
+*.bat
 *.pdf
 *.txt
 
 !LICENSE.txt
+!CMakeLists.txt
 
 # Visual Studio project
 *.vcxproj
